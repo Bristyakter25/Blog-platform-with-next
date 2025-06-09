@@ -1,5 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -42,7 +43,7 @@ export default function RootLayout({ children }) {
         <nav aria-label="Global">
           <ul className="flex items-center gap-6 text-sm">
             <li>
-              <a className="text-gray-500 transition hover:text-gray-500/75" href="#"> About </a>
+              <button className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm"><Link href="/">Home</Link></button>
             </li>
 
             <li>
@@ -70,12 +71,7 @@ export default function RootLayout({ children }) {
 
       <div className="flex items-center gap-4">
         <div className="sm:flex sm:gap-4">
-          <a
-            className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm"
-            href="#"
-          >
-            Login
-          </a>
+          <button className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm"><Link href="/login">Login</Link></button>
 
           <div className="hidden sm:flex">
             <a
