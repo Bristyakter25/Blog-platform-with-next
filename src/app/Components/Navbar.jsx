@@ -30,7 +30,12 @@ export default function Navbar() {
                   </li>
 
                   <li>
-                    <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Careers</a>
+                    <Link
+                      href="/blogs"
+                      className="text-gray-500 transition hover:text-gray-500/75"
+                    >
+                      Post Blogs
+                    </Link>
                   </li>
                   <li>
                     <a className="text-gray-500 transition hover:text-gray-500/75" href="#">History</a>
@@ -57,7 +62,7 @@ export default function Navbar() {
                     <span className="text-gray-700 mt-2 font-medium">{session.user.name || session.user.email}</span>
                     <button
                       onClick={() => signOut({ callbackUrl: '/' })}
-                      className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-red-700"
+                      className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-teal-700"
                     >
                       Logout
                     </button>
