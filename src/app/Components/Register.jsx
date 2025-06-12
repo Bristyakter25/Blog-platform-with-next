@@ -1,41 +1,47 @@
 'use client';
 
-import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
-import Swal from "sweetalert2";
+import { useRouter } from 'next/navigation';
+import Swal from 'sweetalert2';
+import { registerUser } from '../actions/auth/registerUser';
 
-export default function Login() {
+export default function Register() {
   const router = useRouter();
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+  const handleRegister = async (e) => {
+    e.preventDefault(); // Prevent form reload
 
     const form = e.target;
+    const name = form.name.value;
     const email = form.email.value;
     const password = form.password.value;
 
-    const res = await signIn("credentials", {
-      redirect: false,
-      email,
-      password
-    });
+    try {
+      const result = await registerUser({ name, email, password });
 
-    if (res.ok) {
-      Swal.fire({
-        icon: 'success',
-        title: 'Logged in successfully!',
-        showConfirmButton: false,
-        timer: 1500
-      });
+      if (result?.acknowledged || result?.insertedId || result?.success) {
+        Swal.fire({
+          icon: 'success',
+          title: 'Registration Successful!',
+          text: 'You can now log in.',
+          showConfirmButton: false,
+          timer: 2000,
+        });
 
-      setTimeout(() => {
-        router.push("/"); // Redirect to homepage
-      }, 1600); // Wait for Swal to finish
-    } else {
+        setTimeout(() => {
+          router.push('/login'); // Redirect to login page
+        }, 2100);
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Registration Failed',
+          text: result?.message || 'Something went wrong. Try again.',
+        });
+      }
+    } catch (err) {
       Swal.fire({
         icon: 'error',
-        title: 'Login failed',
-        text: 'Invalid email or password',
+        title: 'Error',
+        text: err.message || 'Something went wrong. Try again.',
       });
     }
   };
@@ -43,9 +49,9 @@ export default function Login() {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
       <div className="max-w-md w-full bg-white p-8 rounded-xl shadow-lg">
-        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">Login Here!</h2>
+        <h2 className="text-2xl font-semibold mb-6 text-center text-gray-800">Register</h2>
 
-        <form onSubmit={handleLogin} className="space-y-5">
+        <form onSubmit={handleRegister} className="space-y-5">
           <div>
             <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
             <input
@@ -86,7 +92,7 @@ export default function Login() {
             type="submit"
             className="w-full py-2 px-4 bg-teal-600 text-white rounded-md hover:bg-teal-700 transition"
           >
-            Login
+            Register
           </button>
         </form>
       </div>

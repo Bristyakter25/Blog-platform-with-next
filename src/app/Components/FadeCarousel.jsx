@@ -8,6 +8,8 @@ import 'swiper/css/pagination';
 import 'swiper/css/autoplay';
 
 import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
+import Login from './Login';
+import UserInfo from './UserInfo';
 
 export default function App() {
   return (
@@ -110,7 +112,9 @@ export default function App() {
             </div>
           </div>
         </SwiperSlide>
+       
       </Swiper>
+     {/* <UserInfo></UserInfo> */}
     </div>
   );
 }
