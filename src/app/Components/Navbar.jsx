@@ -38,10 +38,20 @@ export default function Navbar() {
                     </Link>
                   </li>
                   <li>
-                    <a className="text-gray-500 transition hover:text-gray-500/75" href="#">History</a>
+                  <Link
+                      href="/allBlogs"
+                      className="text-gray-500 transition hover:text-gray-500/75"
+                    >
+                      All Blogs
+                    </Link>
                   </li>
                   <li>
-                    <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Services</a>
+                  <Link
+                      href="/askAI"
+                      className="text-gray-500 transition hover:text-gray-500/75"
+                    >
+                     Ask AI
+                    </Link>
                   </li>
                   <li>
                     <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Projects</a>
