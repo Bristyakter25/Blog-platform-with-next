@@ -47,7 +47,7 @@ export default function AddBlogs() {
   
 
   return (
-   <div className='mt-10'>
+   <div className='mt-10 mb-10'>
     <h1 className='text-center font-bold text-2xl'>Post Your Blogs!</h1>
      <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-6 bg-white shadow-md rounded space-y-4">
       <input name="title" placeholder="Title" value={formData.title} onChange={handleChange} required className="w-full border p-2 rounded" />

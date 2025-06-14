@@ -21,7 +21,7 @@ export default function LatestBlogs() {
   }, []);
 
   return (
-    <section className="p-6 mt-10">
+    <section className="p-6 mx-20 mt-10">
       <h2 className="text-3xl font-bold mb-6">📚 Latest Blog Posts</h2>
       {blogs.length === 0 ? (
         <p>No blogs available.</p>

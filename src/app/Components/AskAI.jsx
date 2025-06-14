@@ -25,7 +25,7 @@ export default function AskAI() {
   };
 
   return (
-    <div className="max-w-3xl mt-5 shadow-sky-300 mx-auto p-8 bg-white rounded-2xl shadow-lg border border-gray-200">
+    <div className="max-w-3xl mb-36 mt-10 shadow-sky-300 mx-auto p-8 bg-white rounded-2xl shadow-lg border border-gray-200">
       <h2 className="text-3xl font-extrabold text-gray-900 mb-6 text-center">
         Ask AI Anything
       </h2>

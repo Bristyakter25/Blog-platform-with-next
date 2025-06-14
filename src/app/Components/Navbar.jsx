@@ -10,10 +10,10 @@ export default function Navbar() {
     <nav>
       <header className="bg-white">
         <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
+          <div className="flex h-16 items-center mt-4 justify-between">
             <div className="md:flex md:items-center md:gap-12">
-              <Link className="block text-teal-600 font-bold text-xl" href="/">
-                MyApp
+              <Link className="block text-teal-600 font-bold text-3xl" href="/">
+                Mindlynk
               </Link>
             </div>
 
@@ -23,7 +23,7 @@ export default function Navbar() {
                   <li>
                     <Link
                       href="/"
-                      className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm"
+                      className="rounded-md bg-teal-600 px-5 py-2.5 text-[18px] font-medium text-white shadow-sm"
                     >
                       Home
                     </Link>
@@ -32,7 +32,7 @@ export default function Navbar() {
                   <li>
                     <Link
                       href="/blogs"
-                      className="text-gray-500 transition hover:text-gray-500/75"
+                      className="text-gray-500 transition hover:text-teal-500/75 text-[18px] "
                     >
                       Post Blogs
                     </Link>
@@ -40,7 +40,7 @@ export default function Navbar() {
                   <li>
                   <Link
                       href="/allBlogs"
-                      className="text-gray-500 transition hover:text-gray-500/75"
+                      className="text-gray-500 transition hover:text-teal-500/75 text-[18px] "
                     >
                       All Blogs
                     </Link>
@@ -48,17 +48,22 @@ export default function Navbar() {
                   <li>
                   <Link
                       href="/askAI"
-                      className="text-gray-500 transition hover:text-gray-500/75"
+                      className="text-gray-500 transition hover:text-teal-500/75 text-[18px] "
                     >
                      Ask AI
                     </Link>
                   </li>
+                  {/* {/* <li>
+                    <a className="text-gray-500 transition hover:text-teal-500/75" href="#">Projects</a>
+                  </li> */}
                   <li>
-                    <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Projects</a>
-                  </li>
-                  <li>
-                    <a className="text-gray-500 transition hover:text-gray-500/75" href="#">Blog</a>
-                  </li>
+                    <Link
+                      href="/aboutMe"
+                      className="text-gray-500 transition hover:text-teal-500/75 text-[18px] "
+                    >
+                     About Me
+                    </Link>
+                  </li> 
                 </ul>
               </nav>
             </div>
@@ -72,7 +77,7 @@ export default function Navbar() {
                     <span className="text-gray-700 mt-2 font-medium">{session.user.name || session.user.email}</span>
                     <button
                       onClick={() => signOut({ callbackUrl: '/' })}
-                      className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-teal-700"
+                      className="rounded-md bg-teal-600 px-5 py-2.5 text-[18px]  font-medium text-white shadow-sm hover:bg-teal-700"
                     >
                       Logout
                     </button>
@@ -81,13 +86,13 @@ export default function Navbar() {
                   <>
                     <Link
                       href="/login"
-                      className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-teal-700"
+                      className="rounded-md bg-teal-600 px-5 py-2.5 text-[18px]  font-medium text-white shadow-sm hover:bg-teal-700"
                     >
                       Login
                     </Link>
                     <Link
                       href="/register"
-                      className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow-sm hover:bg-blue-700"
+                      className="rounded-md bg-teal-600 px-5 py-2.5 text-[18px] font-medium text-white shadow-sm hover:bg-blue-700"
                     >
                       Register
                     </Link>

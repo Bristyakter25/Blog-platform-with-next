@@ -4,6 +4,7 @@ import "./globals.css";
 
 import Navbar from "./Components/Navbar";
 import NextAuthSessionProvider from "../providers/NextAuthSessionProvider";
+import Footer from "./Components/Footer";
 
 
 const geistSans = Geist({
@@ -30,6 +31,7 @@ export default function RootLayout({ children }) {
       >
         <Navbar></Navbar>
         {children}
+        <Footer></Footer>
       </body>
       </NextAuthSessionProvider>
       
